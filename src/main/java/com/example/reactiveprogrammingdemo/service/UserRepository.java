@@ -3,11 +3,9 @@ package com.example.reactiveprogrammingdemo.service;
 import com.example.reactiveprogrammingdemo.dto.UserBasicInfoDTO;
 import com.example.reactiveprogrammingdemo.dto.UserFavoriteDTO;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;

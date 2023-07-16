@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.function.Tuples;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Function;
@@ -53,7 +55,7 @@ public class DemoController {
                 webClientService.getUserFavorites(userId)
                         .map(userFavoriteDTOS -> userFavoriteDTOS.getUserFavoriteName().contains("rap"))
                         .doOnNext(result -> log.info("user favorites check result ={}", result))
-        ).any(t -> t);
+            ).any(t -> t);
 
     }
 }

@@ -22,7 +22,8 @@ public class WebClientService {
                 .get()
                 .uri("/query-user-basic-info", uriBuilder -> uriBuilder.queryParam("userId", userId).build())
                 .retrieve()
-                .bodyToMono(UserBasicInfoDTO.class);
+                .bodyToMono(UserBasicInfoDTO.class)
+                .doOnNext(result -> log.info("webClient execute getUserInfo end"));
     }
 
     public Mono<UserFavoriteDTO> getUserFavorites(Long userId) {
